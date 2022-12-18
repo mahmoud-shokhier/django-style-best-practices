@@ -24,15 +24,21 @@ services:
       - "8000:8000"
     command: /start
 
-  postgres:
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
-    image: sm_group_production_postgres
-    container_name: sm_group_local_postgres
-    volumes:
-      - sm_group_local_postgres_data:/var/lib/postgresql/data:Z
-      - sm_group_local_postgres_data_backups:/backups:z
+  # postgres:
+  #   build:
+  #     context: .
+  #     dockerfile: ./compose/production/postgres/Dockerfile
+  #   image: sm_group_production_postgres
+  #   container_name: sm_group_local_postgres
+  #   volumes:
+  #     - sm_group_local_postgres_data:/var/lib/postgresql/data:Z
+  #     - sm_group_local_postgres_data_backups:/backups:z
+  #   env_file:
+  #     - ./.envs/.local/.postgres
+  db:
+    image: postgres:12-alpine
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.envs/.local/.postgres
 
