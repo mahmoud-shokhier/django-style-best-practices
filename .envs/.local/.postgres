@@ -5,4 +5,4 @@ POSTGRES_PORT=5432
 POSTGRES_DB=sm_group
 POSTGRES_USER=debug
 POSTGRES_PASSWORD=debug
-DATABASE_URL=postgres://debug:debug@localhost/sm_group
+DATABASE_URL=postgres://debug:debug@postgres/sm_group
