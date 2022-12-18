@@ -12,7 +12,7 @@ services:
     image: sm_group_local_django
     container_name: sm_group_local_django
     depends_on:
-      - postgres
+      - db
       - redis
       - mailhog
     volumes:
