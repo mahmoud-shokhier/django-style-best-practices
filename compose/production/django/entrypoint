@@ -24,7 +24,3 @@ import psycopg2
 
 suggest_unrecoverable_after = 30
 start = time.time()
-
->&2 echo 'PostgreSQL is available'
-
-exec "$@"
